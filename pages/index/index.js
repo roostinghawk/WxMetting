@@ -1,3 +1,5 @@
+var util = require('../../utils/util.js')
+
 //index.js
 //获取应用实例
 var app = getApp()
@@ -6,8 +8,9 @@ Page({
     motto: 'Hello，我是刘伟',
     userInfo: {},
     flag: true,
-    meetingDate: new Date(),
-    meetingTime: new Date()
+    validStartDate : util.formatDate(new Date()),
+    meetingDate: util.formatDate(new Date()),
+    meetingStartTime: util.formatTime(new Date())
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,7 +18,9 @@ Page({
       url: '../logs/logs'
     })
   },
-  changeName: function(e) {
+
+  // 发起会议
+  submitMeeting: function(e) {
     // get app
     var app = getApp();
 
@@ -45,9 +50,14 @@ Page({
       meetingDate: e.detail.value
     })
   },
-  bindTimeChange: function(e) {
+  bindStartTimeChange: function(e) {
     this.setData({
-      meetingTime: e.detail.value
+      meetingStartTime: e.detail.value
+    })
+  },
+   bindEndTimeChange: function(e) {
+    this.setData({
+      meetingEndTime: e.detail.value
     })
   }
 })

@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view class="section">
+      <input placeholder = "会议标题"> </input>
+  </view>
+   <view class="section">
+      <input placeholder = "会议内容"> </input>
+  </view>
+
+  <view class="section">
+  <view class="section__title">日期</view>
+  <picker mode="date" value="{{meetingDate}}" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{meetingDate}}
+    </view>
+  </picker>
+</view>
+
+<view class="section">
+  <view class="section__title">时间</view>
+  <picker mode="time" value="{{meetingTime}}" bindchange="bindTimeChange">
+    <view class="picker">
+      当前选择: {{meetingTime}}
+    </view>
+  </picker>
+</view>
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <button bindtap="changeName"> Click me! </button>
+
+  <view wx:if="{{flag}}"> I am a flag
+  </view>
+</view>

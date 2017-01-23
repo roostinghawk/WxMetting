@@ -1,0 +1,31 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#0471b3",
+    "navigationBarTitleText": "刘伟的小程序",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+   "tabBar": {
+       "color": "#B30422",
+      "backgroundColor":"#93d0ee",
+      "borderStyle": "white",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "发起会议"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "text": "会议记录",
+      "color": "#b30422"
+    }]
+  },
+    "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug":true
+}
